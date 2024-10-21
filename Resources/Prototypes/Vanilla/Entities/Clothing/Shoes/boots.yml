@@ -1,6 +1,6 @@
 - type: entity
   parent: [ClothingShoesBaseButcherable, ClothingShoesBootsMagBase]
-  id: ClothingShoesERT
+  id: ClothingShoesTacticalBoots
   name: тактические ботинки
   description: модифицированная обувь, используемая оперативниками ОБР, РХБЗЗ и [&^$*%@] во время различных операций.
   components:
