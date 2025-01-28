@@ -7,6 +7,8 @@
   parent: BaseItem
   abstract: true
   components:
+    - type: RequiresSkill
+      RequiresMedicineLevel: 3
     - type: ItemSlots
     - type: ContainerContainer
       containers:
@@ -102,11 +104,9 @@
   abstract: true
   components:
     - type: Item
-      #sprite: Objects/Specific/Medical/syndi_implanter.rsi
-      sprite: Objects/Specific/Medical/implanter.rsi #Corvax MRP anti-meta
+      sprite: Objects/Specific/Medical/syndi_implanter.rsi
     - type: Sprite
-      #sprite: Objects/Specific/Medical/syndi_implanter.rsi
-      sprite: Objects/Specific/Medical/implanter.rsi #Corvax MRP anti-meta
+      sprite: Objects/Specific/Medical/syndi_implanter.rsi
       state: implanter1
       layers:
         - state: implanter0
@@ -136,24 +136,6 @@
   components:
     - type: Implanter
       implant: SadTromboneImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-LegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-SadTromboneImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-SadTromboneImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: LightImplanter
@@ -162,24 +144,6 @@
   components:
     - type: Implanter
       implant: LightImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-LegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-LightImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-LightImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: BikeHornImplanter
@@ -188,24 +152,6 @@
   components:
     - type: Implanter
       implant: BikeHornImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-LegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-BikeHornImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-BikeHornImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 #Security implanters
 
@@ -216,24 +162,6 @@
   components:
     - type: Implanter
       implant: TrackingImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-LegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-TrackingImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-TrackingImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 #Traitor implanters
 
@@ -244,24 +172,6 @@
   components:
     - type: Implanter
       implant: StorageImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-IllegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-StorageImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-FreedomImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: FreedomImplanter
@@ -270,24 +180,6 @@
   components:
     - type: Implanter
       implant: FreedomImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-IllegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-FreedomImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-FreedomImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: UplinkImplanter
@@ -296,24 +188,6 @@
   components:
   - type: Implanter
     implant: UplinkImplant
-  - type: HiddenDescription #Corvax MRP Hidden Description
-    entries:
-    - label: corvax-hidden-desc-IllegalImplants-medical
-      jobRequired:
-        - Paramedic
-        - MedicalDoctor
-        - ChiefMedicalOfficer
-    - label: corvax-hidden-desc-UplinkImplanter-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
-    - label: corvax-hidden-desc-UplinkImplanter-syndicate
-      whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
 
 - type: entity
   id: EmpImplanter
@@ -322,24 +196,6 @@
   components:
     - type: Implanter
       implant: EmpImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-IllegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-EmpImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-EmpImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: ScramImplanter
@@ -348,24 +204,6 @@
   components:
     - type: Implanter
       implant: ScramImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-IllegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-ScramImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-ScramImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: DnaScramblerImplanter
@@ -374,24 +212,6 @@
   components:
     - type: Implanter
       implant: DnaScramblerImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-IllegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-DnaScramblerImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-DnaScramblerImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 #Nuclear Operative/Special implanters
 
@@ -402,24 +222,6 @@
   components:
     - type: Implanter
       implant: MicroBombImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-IllegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-MicroBombImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-MicroBombImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: MacroBombImplanter
@@ -428,24 +230,6 @@
   components:
     - type: Implanter
       implant: MacroBombImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-IllegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-MacroBombImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-MacroBombImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: DeathRattleImplanter
@@ -454,24 +238,6 @@
   components:
     - type: Implanter
       implant: DeathRattleImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-IllegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-DeathRattleImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-DeathRattleImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative
 
 - type: entity
   id: DeathAcidifierImplanter
@@ -480,24 +246,6 @@
   components:
   - type: Implanter
     implant: DeathAcidifierImplant
-  - type: HiddenDescription #Corvax MRP Hidden Description
-    entries:
-    - label: corvax-hidden-desc-IllegalImplants-medical
-      jobRequired:
-        - Paramedic
-        - MedicalDoctor
-        - ChiefMedicalOfficer
-    - label: corvax-hidden-desc-DeathAcidifierImplanter-research
-      jobRequired:
-        - ResearchAssistant
-        - ResearchDirector
-        - Scientist
-        - Borg
-    - label: corvax-hidden-desc-DeathAcidifierImplanter-syndicate
-      whitelistMind:
-        components:
-          - TraitorRole
-          - NukeOperative
 
 # Security and Command implanters
 
@@ -508,21 +256,3 @@
   components:
     - type: Implanter
       implant: MindShieldImplant
-    - type: HiddenDescription #Corvax MRP Hidden Description
-      entries:
-      - label: corvax-hidden-desc-LegalImplants-medical
-        jobRequired:
-          - Paramedic
-          - MedicalDoctor
-          - ChiefMedicalOfficer
-      - label: corvax-hidden-desc-MindShieldImplanter-research
-        jobRequired:
-          - ResearchAssistant
-          - ResearchDirector
-          - Scientist
-          - Borg
-      - label: corvax-hidden-desc-MindShieldImplanter-syndicate
-        whitelistMind:
-          components:
-            - TraitorRole
-            - NukeOperative

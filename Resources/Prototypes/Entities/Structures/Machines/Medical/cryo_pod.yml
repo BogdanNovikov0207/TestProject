@@ -79,6 +79,8 @@
         !type:PortablePipeNode
         nodeGroupID: Pipe
         pipeDirection: South
+  - type: AtmosMonitoringConsoleDevice
+    navMapBlip: Thermoregulator
   - type: ItemSlots
     slots:
       beakerSlot:
@@ -113,3 +115,5 @@
   - type: GuideHelp
     guides:
     - Cryogenics
+  - type: RequiresSkill
+    RequiresMedicineLevel: 3

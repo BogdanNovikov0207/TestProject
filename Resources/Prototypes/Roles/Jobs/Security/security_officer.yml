@@ -21,14 +21,34 @@
   - External
   - Cryogenics
   special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Skill
-        MedicineLevel: 1
-        RangeWeaponLevel: 3
-        PilotingLevel: 3
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: Speech
+        speechSounds: Soldier
+        soundCooldownTime: 0.1
+      - type: TriggerOnMobstateChange
+        mobState:
+        - Critical
+      - type: EmitSoundOnTrigger
+        sound:
+          collection: SoldierDeath
+          params:
+            volume: -4
+      - type: Skill
+        PilotingLevel: 2
+        RangeWeaponLevel: 3
+        MeleeWeaponLevel: 3
+        MedicineLevel: 1
+        ChemistryLevel: 0
+        EngineeringLevel: 0
+        BuildingLevel: 0
+        ResearchLevel: 0
+        InstrumentationLevel: 0
+      - type: AddSkillPoints
+        Points: 6
+
 
 - type: startingGear
   id: SecurityOfficerGear

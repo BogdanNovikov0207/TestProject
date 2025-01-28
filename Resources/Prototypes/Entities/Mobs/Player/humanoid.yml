@@ -35,19 +35,48 @@
   id: DeathSquad
   parent: EventHumanoidMindShielded
   randomizeName: false
-  speciesBlacklist: ['Diona'] # Corvax-MRP
+  speciesBlacklist:
+    - Diona
+    - Moth
+    - Arachnid
+    - Dwarf
+    - Vox
+    - Reptilian
+    - Vulpkanin # Corvax-MRP
   components:
     - type: Skill
+      PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
       MedicineLevel: 3
       ChemistryLevel: 3
-      RangeWeaponLevel: 3
-      PilotingLevel: 3
+      EngineeringLevel: 3
+      BuildingLevel: 3
+      ResearchLevel: 3
+      InstrumentationLevel: 3
+    - type: AutoImplant
+      implants:
+      - TrackingImplant
+      - FreedomImplant
+    - type: Speech
+      speechSounds: Soldier
+      soundCooldownTime: 0.1
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: SoldierDeath
+        params:
+          volume: -4
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
       description: ghost-role-information-Death-Squad-description
       rules: ghost-role-information-Death-Squad-rules
       raffle:
         settings: short
+      mindRoles:
+      - MindRoleGhostRoleFamiliar
     - type: Loadout
       prototypes: [ DeathSquadGear ]
       roleLoadout: [ RoleSurvivalEVA ]
@@ -66,7 +95,7 @@
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertleader
+      state: ertleadereva
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitaryLeader
@@ -77,13 +106,41 @@
 - type: randomHumanoidSettings
   id: ERTLeader
   parent: EventHumanoidMindShielded
+  speciesBlacklist:
+    - Diona
+    - Moth
+    - Arachnid
+    - Dwarf
+    - Vox
+    - Reptilian
+    - Vulpkanin
   randomizeName: false
   components:
     - type: Skill
+      PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
       MedicineLevel: 3
       ChemistryLevel: 3
-      RangeWeaponLevel: 3
-      PilotingLevel: 3
+      EngineeringLevel: 3
+      BuildingLevel: 3
+      ResearchLevel: 3
+      InstrumentationLevel: 3
+    - type: AutoImplant
+      implants:
+      - TrackingImplant
+      - FreedomImplant
+    - type: Speech
+      speechSounds: Soldier
+      soundCooldownTime: 0.1
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: SoldierDeath
+        params:
+          volume: -4
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
       description: ghost-role-information-ert-leader-description
@@ -98,56 +155,6 @@
       nameSegments:
       - NamesFirstMilitaryLeader
       - NamesLastMilitary
-
-- type: entity
-  id: RandomHumanoidSpawnerERTLeaderEVA
-  parent: RandomHumanoidSpawnerERTLeader
-  name: ERT leader
-  suffix: ERTRole, Armored EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertleadereva
-    - type: RandomHumanoidSpawner
-      settings: ERTLeaderEVA
-
-- type: randomHumanoidSettings
-  id: ERTLeaderEVA
-  parent: ERTLeader
-  components:
-    - type: GhostRole
-      name: ghost-role-information-ert-leader-name
-      description: ghost-role-information-ert-leader-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: ERTLeader
-    - type: Loadout
-      prototypes: [ ERTLeaderGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
-
-- type: entity
-  id: RandomHumanoidSpawnerERTLeaderEVALecter
-  parent: RandomHumanoidSpawnerERTLeaderEVA
-  suffix: ERTRole, Lecter, EVA
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ERTLeaderEVALecter
-
-- type: randomHumanoidSettings
-  id: ERTLeaderEVALecter
-  parent: ERTLeaderEVA
-  components:
-    - type: GhostRole
-      name: ghost-role-information-ert-leader-name
-      description: ghost-role-information-ert-leader-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: ERTLeader
-    - type: Loadout
-      prototypes: [ ERTLeaderGearEVALecter ]
-      roleLoadout: [ RoleSurvivalEVA ]
 
 ## ERT Chaplain
 
@@ -170,12 +177,25 @@
 - type: randomHumanoidSettings
   id: ERTChaplain
   parent: ERTLeader
+  speciesBlacklist:
+    - Diona
+    - Moth
+    - Arachnid
+    - Dwarf
+    - Vox
+    - Reptilian
+    - Vulpkanin
   components:
     - type: Skill
-      MedicineLevel: 2
-      ChemistryLevel: 1
-      RangeWeaponLevel: 3
       PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
+      MedicineLevel: 0
+      ChemistryLevel: 0
+      EngineeringLevel: 0
+      BuildingLevel: 0
+      ResearchLevel: 0
+      InstrumentationLevel: 0
     - type: BibleUser
     - type: GhostRole
       name: ghost-role-information-ert-chaplain-name
@@ -191,34 +211,6 @@
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
       roleLoadout: [ RoleSurvivalExtended ]
-
-- type: entity
-  id: RandomHumanoidSpawnerERTChaplainEVA
-  parent: RandomHumanoidSpawnerERTChaplain
-  name: ERT chaplain
-  suffix: ERTRole, Enviro EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: chaplain #needs an ERT variant once a good suit it made.
-    - type: RandomHumanoidSpawner
-      settings: ERTChaplainEVA
-
-- type: randomHumanoidSettings
-  id: ERTChaplainEVA
-  parent: ERTChaplain
-  components:
-    - type: GhostRole
-      name: ghost-role-information-ert-chaplain-name
-      description: ghost-role-information-ert-chaplain-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: ERTChaplain
-    - type: Loadout
-      prototypes: [ ERTChaplainGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
-    - type: BibleUser
 
 ## ERT Janitor
 
@@ -241,12 +233,39 @@
 - type: randomHumanoidSettings
   id: ERTJanitor
   parent: ERTLeader
+  speciesBlacklist:
+    - Diona
+    - Moth
+    - Arachnid
+    - Dwarf
+    - Vox
+    - Reptilian
+    - Vulpkanin
   components:
     - type: Skill
-      MedicineLevel: 3
-      ChemistryLevel: 3
-      RangeWeaponLevel: 2
       PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
+      MedicineLevel: 0
+      ChemistryLevel: 0
+      EngineeringLevel: 0
+      BuildingLevel: 0
+      ResearchLevel: 0
+      InstrumentationLevel: 0
+    - type: AutoImplant
+      implants:
+      - TrackingImplant
+    - type: Speech
+      speechSounds: Soldier
+      soundCooldownTime: 0.1
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: SoldierDeath
+        params:
+          volume: -4
     - type: GhostRole
       name: ghost-role-information-ert-janitor-name
       description: ghost-role-information-ert-janitor-description
@@ -262,33 +281,6 @@
       prototypes: [ ERTJanitorGear ]
       roleLoadout: [ RoleSurvivalExtended ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTJanitorEVA
-  parent: RandomHumanoidSpawnerERTJanitor
-  name: ERT janitor
-  suffix: ERTRole, Enviro EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertjanitoreva
-    - type: RandomHumanoidSpawner
-      settings: ERTJanitorEVA
-
-- type: randomHumanoidSettings
-  id: ERTJanitorEVA
-  parent: ERTJanitor
-  components:
-    - type: GhostRole
-      name: ghost-role-information-ert-janitor-name
-      description: ghost-role-information-ert-janitor-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: ERTJanitor
-    - type: Loadout
-      prototypes: [ ERTJanitorGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
-
 ## ERT Engineer
 
 - type: entity
@@ -299,7 +291,7 @@
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertengineer
+      state: ertengineereva
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
@@ -310,12 +302,39 @@
 - type: randomHumanoidSettings
   id: ERTEngineer
   parent: ERTLeader
+  speciesBlacklist:
+    - Diona
+    - Moth
+    - Arachnid
+    - Dwarf
+    - Vox
+    - Reptilian
+    - Vulpkanin
   components:
     - type: Skill
-      MedicineLevel: 2
-      ChemistryLevel: 1
-      RangeWeaponLevel: 2
       PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
+      MedicineLevel: 0
+      ChemistryLevel: 0
+      EngineeringLevel: 3
+      BuildingLevel: 3
+      ResearchLevel: 0
+      InstrumentationLevel: 2
+    - type: AutoImplant
+      implants:
+      - TrackingImplant
+    - type: Speech
+      speechSounds: Soldier
+      soundCooldownTime: 0.1
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: SoldierDeath
+        params:
+          volume: -4
     - type: GhostRole
       name: ghost-role-information-ert-engineer-name
       description: ghost-role-information-ert-engineer-description
@@ -331,33 +350,6 @@
       prototypes: [ ERTEngineerGear ]
       roleLoadout: [ RoleSurvivalExtended ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTEngineerEVA
-  parent: RandomHumanoidSpawnerERTEngineer
-  name: ERT engineer
-  suffix: ERTRole, Enviro EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertengineereva
-    - type: RandomHumanoidSpawner
-      settings: ERTEngineerEVA
-
-- type: randomHumanoidSettings
-  id: ERTEngineerEVA
-  parent: ERTEngineer
-  components:
-    - type: GhostRole
-      name: ghost-role-information-ert-engineer-name
-      description: ghost-role-information-ert-engineer-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: ERTEngineer
-    - type: Loadout
-      prototypes: [ ERTEngineerGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
-
 ## ERT Security
 
 - type: entity
@@ -368,7 +360,7 @@
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertsecurity
+      state: ertsecurityeva
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
@@ -378,15 +370,41 @@
 
 - type: randomHumanoidSettings
   id: ERTSecurity
-  speciesBlacklist: # Corvax-MRP
-    - Diona
   parent: ERTLeader
+  speciesBlacklist:
+    - Diona
+    - Moth
+    - Arachnid
+    - Dwarf
+    - Vox
+    - Reptilian
+    - Vulpkanin
   components:
     - type: Skill
-      MedicineLevel: 2
-      ChemistryLevel: 1
-      RangeWeaponLevel: 3
       PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
+      MedicineLevel: 3
+      ChemistryLevel: 0
+      EngineeringLevel: 0
+      BuildingLevel: 0
+      ResearchLevel: 0
+      InstrumentationLevel: 0
+    - type: AutoImplant
+      implants:
+      - TrackingImplant
+      - FreedomImplant
+    - type: Speech
+      speechSounds: Soldier
+      soundCooldownTime: 0.1
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: SoldierDeath
+        params:
+          volume: -4
     - type: GhostRole
       name: ghost-role-information-ert-security-name
       description: ghost-role-information-ert-security-description
@@ -402,56 +420,6 @@
       prototypes: [ ERTSecurityGear ]
       roleLoadout: [ RoleSurvivalExtended ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTSecurityEVA
-  parent: RandomHumanoidSpawnerERTSecurity
-  name: ERT security
-  suffix: ERTRole, Armored EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertsecurityeva
-    - type: RandomHumanoidSpawner
-      settings: ERTSecurityEVA
-
-- type: randomHumanoidSettings
-  id: ERTSecurityEVA
-  parent: ERTSecurity
-  components:
-    - type: GhostRole
-      name: ghost-role-information-ert-security-name
-      description: ghost-role-information-ert-security-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: ERTSecurity
-    - type: Loadout
-      prototypes: [ ERTSecurityGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
-
-- type: entity
-  id: RandomHumanoidSpawnerERTSecurityEVALecter
-  parent: RandomHumanoidSpawnerERTSecurityEVA
-  suffix: ERTRole, Lecter, EVA
-  components:
-    - type: RandomHumanoidSpawner
-      settings: ERTSecurityEVALecter
-
-- type: randomHumanoidSettings
-  id: ERTSecurityEVALecter
-  parent: ERTSecurityEVA
-  components:
-    - type: GhostRole
-      name: ghost-role-information-ert-security-name
-      description: ghost-role-information-ert-security-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: ERTSecurity
-    - type: Loadout
-      prototypes: [ ERTSecurityGearEVALecter ]
-      roleLoadout: [ RoleSurvivalEVA ]
-
 ## ERT Medic
 
 - type: entity
@@ -462,7 +430,7 @@
   components:
     - type: Sprite
       sprite: Markers/jobs.rsi
-      state: ertmedical
+      state: ertmedicaleva
     - type: RandomMetadata
       nameSegments:
       - NamesFirstMilitary
@@ -473,12 +441,39 @@
 - type: randomHumanoidSettings
   id: ERTMedical
   parent: ERTLeader
+  speciesBlacklist:
+    - Diona
+    - Moth
+    - Arachnid
+    - Dwarf
+    - Vox
+    - Reptilian
+    - Vulpkanin
   components:
     - type: Skill
+      PilotingLevel: 3
+      RangeWeaponLevel: 2
+      MeleeWeaponLevel: 2
       MedicineLevel: 3
       ChemistryLevel: 3
-      RangeWeaponLevel: 2
-      PilotingLevel: 3
+      EngineeringLevel: 0
+      BuildingLevel: 0
+      ResearchLevel: 0
+      InstrumentationLevel: 0
+    - type: AutoImplant
+      implants:
+      - TrackingImplant
+    - type: Speech
+      speechSounds: Soldier
+      soundCooldownTime: 0.1
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: SoldierDeath
+        params:
+          volume: 3
     - type: GhostRole
       name: ghost-role-information-ert-medical-name
       description: ghost-role-information-ert-medical-description
@@ -494,33 +489,6 @@
       prototypes: [ ERTMedicalGear ]
       roleLoadout: [ RoleSurvivalExtended ]
 
-- type: entity
-  id: RandomHumanoidSpawnerERTMedicalEVA
-  parent: RandomHumanoidSpawnerERTMedical
-  name: ERT medic
-  suffix: ERTRole, Armored EVA
-  components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
-      state: ertmedicaleva
-    - type: RandomHumanoidSpawner
-      settings: ERTMedicalEVA
-
-- type: randomHumanoidSettings
-  id: ERTMedicalEVA
-  parent: ERTMedical
-  components:
-    - type: GhostRole
-      name: ghost-role-information-ert-medical-name
-      description: ghost-role-information-ert-medical-description
-      rules: ghost-role-information-nonantagonist-rules
-      raffle:
-        settings: short
-      job: ERTMedical
-    - type: Loadout
-      prototypes: [ ERTMedicalGearEVA ]
-      roleLoadout: [ RoleSurvivalEVA ]
-
 ## CBURN
 
 - type: entity
@@ -535,16 +503,41 @@
       settings: CBURNAgent
 
 - type: randomHumanoidSettings
-  speciesBlacklist: # Corvax-MRP
-    - Diona
   id: CBURNAgent
   parent: EventHumanoidMindShielded
+  speciesBlacklist:
+    - Diona
+    - Moth
+    - Arachnid
+    - Dwarf
+    - Vox
+    - Reptilian
+    - Vulpkanin
   components:
     - type: Skill
+      PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
       MedicineLevel: 3
       ChemistryLevel: 3
-      RangeWeaponLevel: 3
-      PilotingLevel: 3
+      EngineeringLevel: 2
+      BuildingLevel: 2
+      ResearchLevel: 3
+      InstrumentationLevel: 1
+    - type: AutoImplant
+      implants:
+      - TrackingImplant
+    - type: Speech
+      speechSounds: Soldier
+      soundCooldownTime: 0.1
+    - type: TriggerOnMobstateChange
+      mobState:
+      - Critical
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: SoldierDeath
+        params:
+          volume: -4
     - type: Loadout
       prototypes: [CBURNGear]
       roleLoadout: [ RoleSurvivalEVA ]
@@ -574,12 +567,22 @@
 - type: randomHumanoidSettings
   id: CentcomOfficial
   parent: EventHumanoidMindShielded
+  speciesBlacklist:
+    - Vox
   components:
     - type: Skill
-      MedicineLevel: 1
-      ChemistryLevel: 1
-      RangeWeaponLevel: 1
       PilotingLevel: 3
+      RangeWeaponLevel: 1
+      MeleeWeaponLevel: 1
+      MedicineLevel: 1
+      ChemistryLevel: 0
+      EngineeringLevel: 0
+      BuildingLevel: 0
+      ResearchLevel: 0
+      InstrumentationLevel: 0
+    - type: AutoImplant
+      implants:
+      - TrackingImplant
     - type: GhostRole
       name: ghost-role-information-centcom-official-name
       description: ghost-role-information-centcom-official-description
@@ -608,10 +611,15 @@
   id: SyndicateAgent
   components:
     - type: Skill
-      MedicineLevel: 2
-      ChemistryLevel: 2
-      RangeWeaponLevel: 3
       PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
+      MedicineLevel: 3
+      ChemistryLevel: 3
+      EngineeringLevel: 3
+      BuildingLevel: 3
+      ResearchLevel: 3
+      InstrumentationLevel: 3
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: Loadout
@@ -632,10 +640,15 @@
   id: NukeOp
   components:
     - type: Skill
+      PilotingLevel: 3
+      RangeWeaponLevel: 3
+      MeleeWeaponLevel: 3
       MedicineLevel: 3
       ChemistryLevel: 3
-      RangeWeaponLevel: 3
-      PilotingLevel: 3
+      EngineeringLevel: 3
+      BuildingLevel: 3
+      ResearchLevel: 3
+      InstrumentationLevel: 3
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: NukeOperative
@@ -661,10 +674,15 @@
   randomizeName: false
   components:
     - type: Skill
+      PilotingLevel: 0
+      RangeWeaponLevel: 0
+      MeleeWeaponLevel: 0
       MedicineLevel: 0
       ChemistryLevel: 0
-      RangeWeaponLevel: 0
-      PilotingLevel: 0
+      EngineeringLevel: 0
+      BuildingLevel: 0
+      ResearchLevel: 0
+      InstrumentationLevel: 0
     - type: GhostRole
       name: ghost-role-information-cluwne-name
       description: ghost-role-information-cluwne-description

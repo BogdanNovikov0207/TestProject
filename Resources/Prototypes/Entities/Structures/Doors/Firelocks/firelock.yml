@@ -5,6 +5,8 @@
   name: firelock
   description: Apply crowbar.
   components:
+    - type: RequiresSkill
+      RequiresInstrumentationLevel: 2
     - type: AtmosAlarmable
       syncWith:
         - FireAlarm
@@ -115,6 +117,7 @@
       color: Red
       enabled: false
       castShadows: false
+    - type: NavMapDoor
 
 - type: entity
   id: Firelock

@@ -4,6 +4,8 @@
   name: atmospheric alerts computer
   description: Used to access the station's atmospheric automated alert system.
   components:
+  - type: RequiresSkill
+    RequiresEngineeringLevel: 2
   - type: Computer
     board: AlertsComputerCircuitboard
   - type: Sprite
@@ -50,6 +52,39 @@
           type: WiresBoundUserInterface
 
 - type: entity
+  parent: BaseComputerAiAccess
+  id: ComputerAtmosMonitoring
+  name: atmospheric network monitor
+  description: Used to monitor the station's atmospheric networks.
+  components:
+  - type: Computer
+    board: AtmosMonitoringComputerCircuitboard
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: tank
+    - map: ["computerLayerKeys"]
+      state: atmos_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: AtmosMonitoringConsole
+    navMapTileColor: "#1a1a1a"
+    navMapWallColor: "#404040"
+  - type: ActivatableUI
+    singleUser: true
+    key: enum.AtmosMonitoringConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.AtmosMonitoringConsoleUiKey.Key:
+        type: AtmosMonitoringConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+
+- type: entity
   parent: BaseComputer
   id: ComputerEmergencyShuttle
   name: emergency shuttle console
@@ -81,14 +116,6 @@
   description: Used to pilot a shuttle.
   abstract: true
   components:
-  - type: RequiresSkill
-    RequiresPilotingLevel: 1
-    RequiresPilotingLevelForCoord: 2 
-    RequiresPilotingLevelForMap: 3
-  - type: SkillTrainer
-    skillType: Piloting
-    skillIncreaseAmount: 1
-    MaxLevel: 3
   - type: ShuttleConsole
   - type: ActivatableUI
     key: enum.ShuttleConsoleUiKey.Key
@@ -123,6 +150,14 @@
       board: !type:Container
         ents: []
       disk_slot: !type:ContainerSlot {}
+  - type: RequiresSkill
+    RequiresPilotingLevel: 1
+    RequiresPilotingLevelForCoord: 2 
+    RequiresPilotingLevelForMap: 3
+  - type: SkillTrainer
+    skillIncreaseAmount: 1
+    skillType:
+      - Piloting
 
 - type: entity
   parent: BaseComputerShuttle
@@ -268,6 +303,8 @@
   name: power monitoring computer
   description: It monitors power levels across the station.
   components:
+  - type: RequiresSkill
+    RequiresEngineeringLevel: 2
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -479,6 +516,8 @@
   - type: GuideHelp
     guides:
     - Science
+  - type: RequiresSkill
+    RequiresResearchLevel: 2
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -529,6 +568,8 @@
   - type: GuideHelp
     guides:
     - Xenoarchaeology
+  - type: RequiresSkill
+    RequiresResearchLevel: 2
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -689,6 +730,8 @@
   name: solar control computer
   description: A controller for solar panel arrays.
   components:
+  - type: RequiresSkill
+    RequiresEngineeringLevel: 2
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -934,6 +977,8 @@
   - type: GuideHelp
     guides:
     - Cloning
+  - type: RequiresSkill
+    RequiresMedicineLevel: 3
 
 - type: entity
   id: ComputerSalvageExpedition

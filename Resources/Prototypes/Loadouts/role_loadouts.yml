@@ -5,6 +5,7 @@
 #  - Inventory # Corvax-Loadouts
   - CaptainHead
   - CaptainNeck
+  - CaptainGloves
   - CaptainJumpsuit
   - CaptainsSabers
   - CaptainBackpack
@@ -33,7 +34,7 @@
 # Silicons
 - type: roleLoadout
   id: JobStationAi
-  nameDataset: names_ai
+  nameDataset: NamesAI
 
 # Civilian
 - type: roleLoadout

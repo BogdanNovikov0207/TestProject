@@ -11,13 +11,21 @@
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
+  jobPreviewEntity: PlayerStationAiPreview
   applyTraits: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: Skill
+        PilotingLevel: 3
+        RangeWeaponLevel: 3
+        MeleeWeaponLevel: 3
         MedicineLevel: 3
         ChemistryLevel: 3
+        EngineeringLevel: 3
+        BuildingLevel: 3
+        ResearchLevel: 3
+        InstrumentationLevel: 3
 
 - type: job
   id: Borg
@@ -30,11 +38,18 @@
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
-  jobEntity: PlayerBorgGeneric
+  jobEntity: PlayerBorgBattery
   applyTraits: false
   special:
   - !type:AddComponentSpecial
     components:
       - type: Skill
+        PilotingLevel: 3
+        RangeWeaponLevel: 3
+        MeleeWeaponLevel: 3
         MedicineLevel: 3
         ChemistryLevel: 3
+        EngineeringLevel: 3
+        BuildingLevel: 3
+        ResearchLevel: 3
+        InstrumentationLevel: 3

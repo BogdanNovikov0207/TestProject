@@ -15,11 +15,26 @@
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
-  canBeAntag: true # Corvax-MRP: Available not only for newbies
+  canBeAntag: false
   access:
   - Maintenance
   - Engineering
   - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skill
+        PilotingLevel: 1
+        RangeWeaponLevel: 0
+        MeleeWeaponLevel: 0
+        MedicineLevel: 0
+        ChemistryLevel: 0
+        EngineeringLevel: 2
+        BuildingLevel: 2
+        ResearchLevel: 0
+        InstrumentationLevel: 1
+      - type: AddSkillPoints
+        Points: 6
 
 - type: startingGear
   id: TechnicalAssistantGear

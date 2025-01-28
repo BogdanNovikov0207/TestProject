@@ -12,7 +12,6 @@
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
-  requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false
   access:
@@ -31,8 +30,17 @@
     components:
       - type: CommandStaff
       - type: Skill
-        ChemistryLevel: 1
         PilotingLevel: 2
+        RangeWeaponLevel: 0
+        MeleeWeaponLevel: 0
+        MedicineLevel: 0
+        ChemistryLevel: 1
+        EngineeringLevel: 3
+        BuildingLevel: 3
+        ResearchLevel: 0
+        InstrumentationLevel: 2
+      - type: AddSkillPoints
+        Points: 6
 
 - type: startingGear
   id: ChiefEngineerGear

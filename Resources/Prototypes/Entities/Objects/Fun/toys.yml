@@ -35,6 +35,7 @@
     damage:
       types:
         Blunt: 0
+    hidden: true
   - type: PhysicalComposition
     materialComposition:
       Cloth: 100
@@ -300,7 +301,10 @@
   description: An adorable stuffed toy that resembles a lizardperson. Made by CentComm as a token initiative to combat speciesism in work environments. "Welcome your new colleagues as you do this plush, with open arms!"
   components:
   - type: Sprite
+    sprite: Objects/Fun/toys.rsi
     state: plushie_lizard
+  - type: Item
+    heldPrefix: plushielizard
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/Toys/weh.ogg
@@ -350,6 +354,8 @@
   description: An adorable stuffed toy that resembles a lizardperson of every color. You just might trip while staring at it...
   name: rainbow lizard plushie
   components:
+  - type: Sprite
+    state: rainbowlizardplush
   - type: PointLight
     radius: 1.5
     energy: 2
@@ -360,6 +366,14 @@
       head:
       - state: lizard-equipped-HELMET
         shader: unshaded
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: rainbowlizardplush-inhand-left
+        shader: unshaded
+      right:
+      - state: rainbowlizardplush-inhand-right
+        shader: unshaded
 
 - type: entity
   parent: PlushieLizard
@@ -368,131 +382,8 @@
   - type: Item
     size: Small
   - type: Sprite
-    state: plushie_lizard_mirrored
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieLizardGrandTanaka #Vanilla-Station
-  name: Grand-Tanaka plushie
-  description: An adorable stuffed toy that resembles a lizardperson. HandMade.
-  components:
-  - type: Sprite
-    state: plushie_lizard_grand_tanaka
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Items/Toys/weh.ogg
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/Toys/weh.ogg
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Items/Toys/weh.ogg
-  - type: EmitSoundOnTrigger
-    sound:
-      path: /Audio/Items/Toys/weh.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      path: /Audio/Items/Toys/weh.ogg
-  - type: MeleeWeapon
-    wideAnimationRotation: 180
-    soundHit:
-      path: /Audio/Items/Toys/weh.ogg
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: JuiceThatMakesYouWeh
-        Quantity: 30
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: JuiceThatMakesYouWeh
-          Quantity: 10
-  - type: Clothing
-    quickEquip: false
-    sprite: Objects/Fun/toys.rsi
-    equippedPrefix: lizard_grand_tanaka
-    slots:
-    - HEAD
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieCentcomAliaZimova # Vanilla-Station
-  name: Alia Zimova plushie
-  description: The OCC is a toy that smells of bureaucracy so strongly that you can already feel how paper reports wrap around you, ready to strangle you with their endless bureaucratic power. Well, shall we make another request for permission to breathe?
-  components:
-  - type: Sprite
-    state: plushie_centcom_alia_zimova
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Items/Toys/rawr.ogg
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/Toys/rawr.ogg
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Items/Toys/rawr.ogg
-  - type: EmitSoundOnTrigger
-    sound:
-      path: /Audio/Items/Toys/rawr.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      path: /Audio/Items/Toys/rawr.ogg
-  - type: MeleeWeapon
-    wideAnimationRotation: 180
-    soundHit:
-      path: /Audio/Items/Toys/rawr.ogg
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: Happiness
-        Quantity: 30
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 10
-        - ReagentId: Happiness
-          Quantity: 10
-
-- type: entity
-  parent: BaseFigurineCheapo
-  id: plushieUnaAkvanova #vanilla
-  name: Una Akvanova plushe
-  description: Rumor has it that she is a backyard cosplayer...
-  components:
-  - type: Sprite
-    state: plushie_una_Akvanova
-  - type: Tag
-    tags:
-      - Payload
-  - type: UseDelay
-    delay: 35.0
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Vanilla/Items/Toys/yooooo.ogg
-      params:
-        volume: -3
-        maxDistance: 5
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Vanilla/Items/Toys/yooooo.ogg
-      params:
-        volume: -3
-        maxDistance: 5
-  - type: EmitSoundOnTrigger
-    sound:
-      path: /Audio/Vanilla/Items/Toys/yooooo.ogg
-      params:
-        volume: -3
-        maxDistance: 5
+    state: plushie_lizard
+    scale: -1, 1
 
 - type: entity
   parent: BasePlushie
@@ -536,6 +427,58 @@
           Quantity: 10
         - ReagentId: JuiceThatMakesYouWeh
           Quantity: 10
+
+- type: entity
+  parent: PlushieLizard
+  id: PlushieLizardInversed #Hew!
+  name: drazil plushie
+  description: An adorable stuffed toy that resembles a lizardperson from an inversed dimension. Hew!
+  components:
+  - type: Sprite
+    state: plushie_lizard_inversed
+  - type: Item
+    heldPrefix: plushielizardinversed
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Items/Toys/hew.ogg
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceThatMakesYouHew
+        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: JuiceThatMakesYouHew
+          Quantity: 10
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Fun/toys.rsi
+    equippedPrefix: lizard-inversed
+    slots:
+    - HEAD
+
 
 - type: entity
   parent: BasePlushie
@@ -621,11 +564,21 @@
   - type: Sprite
     sprite: Objects/Fun/sharkplush.rsi
     state: blue
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Items/Toys/rawr.ogg
   - type: EmitSoundOnUse
     sound:
       path: /Audio/Items/Toys/rawr.ogg
   - type: EmitSoundOnActivate
     sound:
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
       path: /Audio/Items/Toys/rawr.ogg
   - type: Item
     heldPrefix: blue
@@ -722,6 +675,11 @@
       path: /Audio/Effects/bite.ogg
     angle: 0
     animation: WeaponArcBite # Rrrr!
+  - type: Tag
+    tags:
+      - Payload
+      - ClothMade
+      - PlushieCarp
 
 - type: entity
   parent: PlushieCarp

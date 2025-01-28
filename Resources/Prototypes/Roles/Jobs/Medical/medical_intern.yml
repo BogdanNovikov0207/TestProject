@@ -11,7 +11,7 @@
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
-  canBeAntag: true # Corvax-MRP: Available not only for newbies
+  canBeAntag: false
   access:
   - Medical
   - Maintenance
@@ -19,8 +19,17 @@
   - !type:AddComponentSpecial
     components:
       - type: Skill
+        PilotingLevel: 0
+        RangeWeaponLevel: 0
+        MeleeWeaponLevel: 0
         MedicineLevel: 2
         ChemistryLevel: 2
+        EngineeringLevel: 0
+        BuildingLevel: 0
+        ResearchLevel: 0
+        InstrumentationLevel: 0
+      - type: AddSkillPoints
+        Points: 6
 
 - type: startingGear
   id: MedicalInternGear
@@ -29,7 +38,7 @@
     id: MedicalInternPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
-    pocket2: BookMedicalReferenceBook
+    #pocket2: BookMedicalReferenceBook
   #storage:
     #back:
     #- Stuff

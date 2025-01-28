@@ -17,8 +17,17 @@
   - !type:AddComponentSpecial
     components:
       - type: Skill
-        RangeWeaponLevel: 1
-        ChemistryLevel: 1
+        PilotingLevel: 0
+        RangeWeaponLevel: 2
+        MeleeWeaponLevel: 0
+        MedicineLevel: 0
+        ChemistryLevel: 0
+        EngineeringLevel: 0
+        BuildingLevel: 0
+        ResearchLevel: 0
+        InstrumentationLevel: 0
+      - type: AddSkillPoints
+        Points: 6
 
 - type: startingGear
   id: BartenderGear

@@ -1,5 +1,6 @@
 using Content.Shared.Construction.Conditions;
 using Content.Shared.Whitelist;
+using Content.Shared.Vanilla.Skill;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Utility;
@@ -29,6 +30,11 @@ public sealed partial class ConstructionPrototype : IPrototype
     [DataField("description")]
     public string Description = string.Empty;
 
+    [DataField("RequiresInstrumentationLevel")]
+    public SkillLevel RequiresInstrumentationLevel = 0;
+
+    [DataField("RequiresBuildingLevel")]
+    public SkillLevel RequiresBuildingLevel = 0;
     /// <summary>
     ///     The <see cref="ConstructionGraphPrototype"/> this construction will be using.
     /// </summary>

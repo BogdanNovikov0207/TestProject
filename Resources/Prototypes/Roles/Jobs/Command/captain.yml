@@ -11,7 +11,6 @@
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
-  requireAdminNotify: true
   joinNotifyCrew: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
@@ -23,18 +22,25 @@
   - !type:AddComponentSpecial
     components:
       - type: Skill
-        MedicineLevel: 1
-        ChemistryLevel: 1
-        RangeWeaponLevel: 2
         PilotingLevel: 3
+        RangeWeaponLevel: 3
+        MeleeWeaponLevel: 3
+        MedicineLevel: 1
+        ChemistryLevel: 0
+        EngineeringLevel: 1
+        BuildingLevel: 0
+        ResearchLevel: 0
+        InstrumentationLevel: 0
       - type: CommandStaff
+      - type: AddSkillPoints
+        Points: 6
 
 - type: startingGear
   id: CaptainGear
   equipment:
     shoes: ClothingShoesBootsLaceup
     eyes: ClothingEyesGlassesSunglasses
-    gloves: ClothingHandsGlovesCaptain
+    # gloves: ClothingHandsGlovesCaptain #vanilla-loadouts
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
   storage:

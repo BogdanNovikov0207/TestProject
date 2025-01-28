@@ -11,7 +11,6 @@
       requiredAge: 26
   startingGear: WardenGear
   icon: "JobIconWarden"
-  requireAdminNotify: true
   supervisors: job-supervisors-hos
   canBeAntag: false
   access:
@@ -24,15 +23,33 @@
   - Detective
   - Cryogenics
   special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Skill
-        MedicineLevel: 1
-        ChemistryLevel: 1
-        RangeWeaponLevel: 3
-        PilotingLevel: 3
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: Speech
+        speechSounds: Soldier
+        soundCooldownTime: 0.1
+      - type: TriggerOnMobstateChange
+        mobState:
+        - Critical
+      - type: EmitSoundOnTrigger
+        sound:
+          collection: SoldierDeath
+          params:
+            volume: -4
+      - type: Skill
+        PilotingLevel: 2
+        RangeWeaponLevel: 3
+        MeleeWeaponLevel: 3
+        MedicineLevel: 1
+        ChemistryLevel: 0
+        EngineeringLevel: 1
+        BuildingLevel: 1
+        ResearchLevel: 0
+        InstrumentationLevel: 1
+      - type: AddSkillPoints
+        Points: 6
 
 - type: startingGear
   id: WardenGear

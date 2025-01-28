@@ -14,7 +14,6 @@
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"
-  requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false
   access:
@@ -32,8 +31,17 @@
     components:
       - type: CommandStaff
       - type: Skill
+        PilotingLevel: 0
+        RangeWeaponLevel: 0
+        MeleeWeaponLevel: 0
         MedicineLevel: 3
         ChemistryLevel: 3
+        EngineeringLevel: 1
+        BuildingLevel: 0
+        ResearchLevel: 0
+        InstrumentationLevel: 0
+      - type: AddSkillPoints
+        Points: 6
 
 - type: startingGear
   id: CMOGear

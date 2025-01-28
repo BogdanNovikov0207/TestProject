@@ -1,5 +1,5 @@
 - type: entity
-  parent: [MobObserver, InventoryBase]
+  parent: [MobObserverBase, InventoryBase]
   id: AdminObserver
   name: admin observer
   categories: [ HideSpawnMenu ]
@@ -12,6 +12,7 @@
     - CanPilot
     - BypassInteractionRangeChecks
     - BypassDropChecks
+    - NoConsoleSound
   - type: Input
     context: "aghost"
   - type: Ghost
@@ -27,10 +28,15 @@
   - type: Body
     prototype: Aghost
   - type: Skill
+    PilotingLevel: 3
+    RangeWeaponLevel: 3
+    MeleeWeaponLevel: 3
     MedicineLevel: 3
     ChemistryLevel: 3
-    RangeWeaponLevel: 3
-    PilotingLevel: 3
+    EngineeringLevel: 3
+    BuildingLevel: 3
+    ResearchLevel: 3
+    InstrumentationLevel: 3
   - type: Access
     groups:
     - AllAccess
@@ -135,7 +141,7 @@
     icon: Corvax/Interface/AdminActions/radar.png # Corvax-Resprite
     iconOn: Corvax/Interface/AdminActions/radar.png # Corvax-Resprite
     keywords: [ "AI", "console", "interface" ]
-    priority: -7
+    priority: -6
     event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
 
 - type: entity
@@ -159,7 +165,7 @@
     icon: Corvax/Interface/AdminActions/monitoring.png # Corvax-Resprite
     iconOn: Corvax/Interface/AdminActions/monitoring.png # Corvax-Resprite
     keywords: [ "AI", "console", "interface" ]
-    priority: -9
+    priority: -8
     event: !type:ToggleIntrinsicUIEvent { key: enum.CrewMonitoringUIKey.Key }
 
 - type: entity
@@ -171,5 +177,5 @@
     icon: Corvax/Interface/AdminActions/records.png # Corvax-Resprite
     iconOn: Corvax/Interface/AdminActions/records.png # Corvax-Resprite
     keywords: [ "AI", "console", "interface" ]
-    priority: -8
+    priority: -7
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }

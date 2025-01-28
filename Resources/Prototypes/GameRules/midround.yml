@@ -25,11 +25,8 @@
       multiAntagSetting: NotExclusive
       startingGear: ThiefGear
       components:
-      - type: Skill
-        MedicineLevel: 2
-        ChemistryLevel: 2
-        RangeWeaponLevel: 0
-        PilotingLevel: 1
+      - type: AddSkillPoints
+        Points: 9
       mindRoles:
       - MindRoleThief
       briefing:

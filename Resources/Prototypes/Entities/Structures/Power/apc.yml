@@ -6,6 +6,8 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: RequiresSkill
+    RequiresEngineeringLevel: 1
   - type: StationAiWhitelist
   - type: AmbientOnPowered
   - type: AmbientSound
@@ -153,6 +155,8 @@
   placement:
     mode: SnapgridCenter
   components:
+  - type: RequiresSkill
+    RequiresInstrumentationLevel: 2
   - type: Clickable
   - type: InteractionOutline
   - type: Transform

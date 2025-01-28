@@ -7,6 +7,8 @@
   placement:
     mode: AlignTileAny
   components:
+  - type: RequiresSkill
+    RequiresEngineeringLevel: 2
   - type: StationAnchor
   - type: Transform
     anchored: true
@@ -39,7 +41,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.7,-0.8,0.7,0.8"
+          bounds: "-0.7,-0.7,0.7,0.7"
         density: 190
         mask:
         - LargeMobMask

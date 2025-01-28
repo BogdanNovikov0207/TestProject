@@ -8,8 +8,10 @@
   - SpaceLaw # Corvax-HyperLink
   - FlowerWreath
   - Hairflower
+  - Headphones
   - PlushieLizard
   - PlushieSpaceLizard
+  - ThreeCandles
   - Lighter
   - CigPackGreen
   - CigPackRed
@@ -26,6 +28,7 @@
   - ClothingNeckLesbianPin
   - ClothingNeckNonBinaryPin
   - ClothingNeckPansexualPin
+  - ClothingNeckOmnisexualPin
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
@@ -40,6 +43,23 @@
   # - ClothingNeckSolarisPin
   # - ClothingNeckWhiteListPin
   # # Corvax-Loadouts-End
+  - TowelColorBlack
+  - TowelColorDarkBlue
+  - TowelColorDarkGreen
+  - TowelColorGold
+  - TowelColorGray
+  - TowelColorGreen
+  - TowelColorLightBlue
+  - TowelColorLightBrown
+  - TowelColorMaroon
+  - TowelColorMime
+  - TowelColorOrange
+  - TowelColorPurple
+  - TowelColorRed
+  - TowelColorSilver
+  - TowelColorWhite
+  - TowelColorYellow
+
 - type: loadoutGroup
   id: Glasses
   name: loadout-group-glasses
@@ -48,6 +68,7 @@
   - Glasses
   - GlassesJamjar
   - GlassesJensen
+  - CheapSunglasses
 
 - type: loadoutGroup
   id: GroupTankHarness
@@ -91,6 +112,10 @@
   loadouts:
   - CaptainHead
   - CaptainCap
+  # Vanilla-Loadouts-Start
+  - CapNavalCap
+  - CaptainCapcapWhite
+  # Vanilla-Loadouts-end
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -98,12 +123,17 @@
   loadouts:
   - CaptainJumpsuit
   - CaptainJumpskirt
-  - CaptainFormalSuit
-  - CaptainFormalSkirt
   # Corvax-Loadouts-Start
   - CaptainJumpsuitTurtleneck
   - CaptainJumpskirtTurtleneck
   # Corvax-Loadouts-End
+  - CaptainFormalSuit
+  - CaptainFormalSkirt
+  # Vanilla-Loadouts-Start
+  - UniformJumpsuitNavalCaptain
+  - UniformJumpsuitWhiteCaptain
+  - UniformJumpskirtWhiteCaptain
+  # Vanilla-Loadouts-end
 
 - type: loadoutGroup
   id: CaptainNeck
@@ -113,6 +143,11 @@
   - CaptainCloak
   - CaptainCloakFormal
   - CaptainMantle
+  # Vanilla-Loadouts-Start
+  - ClothingNeckCaptainWideLoadout
+  - CaptainWhiteMantle
+  - CaptainCloakRoyal
+  # Vanilla-Loadouts-end
 
 - type: loadoutGroup
   id: CaptainBackpack
@@ -121,6 +156,7 @@
   - CaptainBackpack
   - CaptainSatchel
   - CaptainDuffel
+  - NavalCaptainSatchel
 
 - type: loadoutGroup
   id: CaptainOuterClothing
@@ -128,6 +164,11 @@
   loadouts:
   - CaptainOuterClothing
   - CaptainWintercoat
+  - ClothingOuterCoat
+  # Vanilla-Loadouts-Start
+  - CoatNavalCaptain
+  - ClothingOuterCoatCaptainWhite
+  # Vanilla-Loadouts-end
 
 - type: loadoutGroup
   id: HoPHead
@@ -1081,11 +1122,11 @@
 - type: loadoutGroup
   id: DetectiveOuterClothing
   name: loadout-group-detective-outerclothing
-  minLimit: 0
   loadouts:
   - DetectiveArmorVest
   - DetectiveCoat
   - DetectiveCoatGrey
+  - DetectiveCoatDark
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit

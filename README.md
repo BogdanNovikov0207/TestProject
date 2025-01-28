@@ -8,7 +8,7 @@ Space Station 14 — это ремейк SS13, который работает �
 
 ## Ссылки
 
-[Наш Discord](https://discord.gg/vanilla-station) | [Наша Вики](https://vanilla-station.ru/) | [Официальный репозиторий](https://github.com/space-wizards/space-station-14)
+[Наш Discord](https://discord.gg/W3Ep2esrzc) | [Наша Вики](https://vanilla-station.ru/) | [Официальный репозиторий](https://github.com/space-wizards/space-station-14)
 
 ## Документация
 
@@ -44,8 +44,9 @@ dotnet build Content.Packaging --configuration Release
 [Более подробная инструкция по запуску проекта.](https://docs.spacestation14.com/en/general-development/setup.html)
 
 ## Лицензия
+Весь код данного [pr](https://github.com/RaytenCorp/VanillaStation/pull/132) лицензирован под AGPLv3.
 
-Весь код репозитория лицензирован под [MIT](https://github.com/space-syndicate/space-station-14/blob/master/LICENSE.TXT), включая код Vanilla Station и их контрибутеров.
+Весь прочий код репозитория лицензирован под [MIT](https://github.com/space-syndicate/space-station-14/blob/master/LICENSE.TXT), включая код Vanilla Station и их контрибутеров.
 
 Большинство ассетов лицензированы под [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Ассеты имеют свою лицензию и авторские права в файле метаданных. [Пример](https://github.com/space-syndicate/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 

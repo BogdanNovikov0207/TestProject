@@ -107,10 +107,17 @@
       - RoleSurvivalNukie
       components:
       - type: Skill
-        MedicineLevel: 3
-        ChemistryLevel: 3
-        RangeWeaponLevel: 3
         PilotingLevel: 3
+        RangeWeaponLevel: 3
+        MeleeWeaponLevel: 3
+        MedicineLevel: 0
+        ChemistryLevel: 0
+        EngineeringLevel: 0
+        BuildingLevel: 0
+        ResearchLevel: 0
+        InstrumentationLevel: 0
+      - type: AddSkillPoints
+        Points: 36
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -129,10 +136,17 @@
       - RoleSurvivalNukie
       components:
       - type: Skill
+        PilotingLevel: 0
+        RangeWeaponLevel: 2
+        MeleeWeaponLevel: 2
         MedicineLevel: 3
         ChemistryLevel: 3
-        RangeWeaponLevel: 3
-        PilotingLevel: 3
+        EngineeringLevel: 0
+        BuildingLevel: 0
+        ResearchLevel: 0
+        InstrumentationLevel: 0
+      - type: AddSkillPoints
+        Points: 36
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -153,10 +167,17 @@
       - RoleSurvivalNukie
       components:
       - type: Skill
-        MedicineLevel: 3
-        ChemistryLevel: 3
-        RangeWeaponLevel: 3
         PilotingLevel: 3
+        RangeWeaponLevel: 3
+        MeleeWeaponLevel: 3
+        MedicineLevel: 0
+        ChemistryLevel: 0
+        EngineeringLevel: 0
+        BuildingLevel: 0
+        ResearchLevel: 0
+        InstrumentationLevel: 0
+      - type: AddSkillPoints
+        Points: 36
       - type: NukeOperative
       - type: RandomMetadata
         nameSegments:
@@ -202,13 +223,24 @@
         - AntagImmune
       lateJoinAdditional: true
       components:
-      - type: Skill
-        MedicineLevel: 3
-        ChemistryLevel: 2
-        RangeWeaponLevel: 2
-        PilotingLevel: 3
+      - type: AddSkillPoints
+        Points: 36
       mindRoles:
       - MindRoleTraitor
+
+- type: entity
+  id: TraitorReinforcement
+  parent: BaseTraitorRule
+  components:
+  - type: TraitorRule
+    giveUplink: false
+    giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
+    giveBriefing: false
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Traitor ]
+      mindRoles:
+      - MindRoleTraitorReinforcement
 
 - type: entity
   id: Revolutionary
@@ -228,11 +260,8 @@
         sound: "/Audio/Ambience/Antag/headrev_start.ogg"
       startingGear: HeadRevGear
       components:
-      - type: Skill
-        MedicineLevel: 2
-        ChemistryLevel: 2
-        RangeWeaponLevel: 3
-        PilotingLevel: 3
+      - type: AddSkillPoints
+        Points: 54
       - type: Revolutionary
       - type: HeadRevolutionary
       mindRoles:
@@ -274,11 +303,8 @@
         color: Plum
         sound: "/Audio/Ambience/Antag/zombie_start.ogg"
       components:
-      - type: Skill
-        MedicineLevel: 3
-        ChemistryLevel: 3
-        RangeWeaponLevel: 3
-        PilotingLevel: 2
+      - type: AddSkillPoints
+        Points: 54
       - type: PendingZombie
       - type: ZombifyOnDeath
       - type: IncurableZombie
@@ -307,7 +333,6 @@
         tableId: CalmPestEventsTable
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
-
 
 - type: entityTable
   id: SpaceTrafficControlTable
